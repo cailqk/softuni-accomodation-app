@@ -1,1 +1,10 @@
-<h1>Catalog</h1>
+<section>
+    <h1>All Places</h1>
+    <main>
+        <ul>
+            {{#each places}}
+            {{> placeCard}}
+            {{/each}}
+        </ul>
+    </main>
+</section>

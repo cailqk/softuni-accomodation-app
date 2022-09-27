@@ -1,0 +1,18 @@
+[
+    {
+      "id": "1",
+      "name": "Some Place",
+      "description": "Nicely situated near the slopes",
+      "city": "Pamporovo",
+      "beds": 3,
+      "price": 78
+    },
+    {
+      "id": "2",
+      "name": "Some Other Place",
+      "description": "Nice apartment with a beatiful view at the sea",
+      "city": "Sozopol",
+      "beds": 2,
+      "price": 40
+    }
+]

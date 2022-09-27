@@ -1,9 +1,14 @@
+const { getAll } = require('../services/accomodationService');
+
 const router = require('express').Router();
 
 
 router.get('/', (req, res) => {
+    const places = getAll();
+
     res.render('catalog', {
-        title: 'All Accomodations'
+        title: 'All Accomodations',
+        places
     })
 });
 
