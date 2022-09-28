@@ -1,1 +1,9 @@
-<h1>Details Page</h1>
+{{#with place}}
+
+<h1>Details for: {{name}}</h1>
+<main>
+    <p>{{description}}</p>
+    <p>Pricing: {{price}}</p>
+</main>
+
+{{/with}}
