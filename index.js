@@ -22,9 +22,6 @@ app.use(homeController);
 app.use('/catalog', catalogController);
 app.use('/create', createController);
 app.use('/about', homeController);
-//TODO attach all controllers
-
-
 app.all('*', notFoundController);
 
 app.listen(port, () => {console.log(`Server listening at port: ${port}`);})
