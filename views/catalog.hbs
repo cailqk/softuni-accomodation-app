@@ -1,5 +1,6 @@
 <section>
-    <h1>All Places</h1>
+    <h1>All Rooms</h1>
+    {{#if places}}
     <main>
         <ul>
             {{#each places}}
@@ -7,4 +8,11 @@
             {{/each}}
         </ul>
     </main>
+    {{else}}
+    <p>No Rooms In Our Data. Be The First To Host!</p>
+    <div>
+        <a class="action" href="/create">Host A Room</a>
+    </div>
+
+    {{/if}}
 </section>
