@@ -3,11 +3,20 @@ const { getAll, getById } = require("../services/accomodationService");
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  const places = getAll();
+  const city = req.query.city || '';
+  const name = req.query.name || '';
+  const lowPrice = Number(req.query.lowPrice) || 1;
+  const highPrice = Number(req.query.highPrice) || 300;
+
+  const places = getAll(city, name, lowPrice, highPrice);
 
   res.render("catalog", {
     title: "All Accomodations",
     places,
+    city, 
+    name,
+    lowPrice,
+    highPrice
   });
 });
 

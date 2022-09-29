@@ -15,8 +15,12 @@ async function memorize() {
   });
 }
 
-function getAll() {
-  return data;
+function getAll(city, name, lowPrice, highPrice) {
+  return data
+  .filter(p => p.city.toLowerCase().includes(city.toLowerCase()))
+  .filter(p => p.name.toLowerCase().includes(name.toLowerCase()))
+  .filter(p => p.price >= lowPrice && p.price <= highPrice);
+
 }
 
 function getById(id) {

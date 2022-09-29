@@ -1,5 +1,28 @@
 <section>
     <h1>All Rooms</h1>
+    <main class="searchDiv">
+        <form class="input-group">
+            <div class="form-outline">
+                <label class="form-label">Location</label>
+                <input type="text" name="city" value="{{city}}" class="form-control" />
+            </div>
+            <div class="form-outline">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" value="{{name}}" class="form-control" />
+            </div>
+            <div class="form-outline">
+                <label class="form-label">From $</label>
+                <input type="number" name="lowPrice" value="{{lowPrice}}" class="form-control" min="1"/>
+            </div>
+            <div class="form-outline">
+                <label class="form-label">To $</label>
+                <input type="number" name="highPrice" value="{{highPrice}}" class="form-control" max="300"/>
+            </div>
+           <div class="form-outline">
+                <input type="submit" class="form-control" value="Search"/>
+            </div>
+        </form>
+    </main>
     {{#if places}}
     <main>
         <ul>
