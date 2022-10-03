@@ -1,27 +1,17 @@
-const express = require('express');
-const hbs = require('express-handlebars').create({
-    extname: '.hbs'
-});
+const express = require("express");
+const expressConfig = require("./config/express");
+const routesConfig = require('./config/routes');
 
-const homeController = require('./controllers/homeController');
-const catalogController = require('./controllers/catalogController');
-const createController = require('./controllers/createController');
-const notFoundController = require('./controllers/notFoundController');
+async function start() {
+    const app = express();
+    const port = 3000;
+    
+    expressConfig(app);
+    routesConfig(app);
+    app.listen(port, () => {
+        console.log(`Server listening at port: ${port}`);
+    });
+}
 
-const app = express();
-const port = 3000;
+start();
 
-app.engine('.hbs', hbs.engine);
-app.set('view engine', '.hbs');
-
-app.use(express.urlencoded({ extended: true }));
-app.use('/static', express.static('static'));
-
-
-app.use(homeController);
-app.use('/catalog', catalogController);
-app.use('/create', createController);
-app.use('/about', homeController);
-app.all('*', notFoundController);
-
-app.listen(port, () => {console.log(`Server listening at port: ${port}`);})
