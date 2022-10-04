@@ -1,0 +1,18 @@
+<h1>Details for: {{place.name}}</h1>
+<main class="main_details">
+    <div class="additions_image">
+    <img class="card-img-top" style="width: 25rem" src="{{place.imgUrl}}">
+    </div>
+    <p>Extras:</p>
+    <form action="/extras/{{place._id}}/addToRoom" method="post">
+    <ul class="additions_ul">
+        {{#each extras}}
+        <li><input type="checkbox" name="{{_id}}">
+            {{label}}
+            <img class="icon" src="{{iconUrl}}">
+        </li>
+        {{/each}}
+    </ul>
+    <button class="btn btn-primary">Confirm Extras</button>
+    </form>
+</main>

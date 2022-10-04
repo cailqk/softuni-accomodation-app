@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 const roomSchema = new Schema({
     name: {type: String, required: true},
@@ -6,7 +6,8 @@ const roomSchema = new Schema({
     city: {type: String, required: true},
     beds: {type: Number, required: true, min: 1},
     price: {type: Number, required: true, min: 10},
-    imgUrl: String
+    imgUrl: String,
+    extras: {type: [Types.ObjectId], default: [], ref: 'Extra'}
 });
 
 const Room = model('Room', roomSchema);
