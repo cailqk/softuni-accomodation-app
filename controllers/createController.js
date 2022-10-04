@@ -1,4 +1,4 @@
-const { createPlace } = require('../services/accomodationService');
+const { createPlace } = require('../services/roomService');
 
 const router = require('express').Router();
 
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
  try {
     const result = await createPlace(req.body);
-     res.redirect(`/catalog/${result.id}`);
+     res.redirect(`/catalog/${result._id}`);
      
  } catch (error) {
      res.render('create', {
