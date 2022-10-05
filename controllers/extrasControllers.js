@@ -1,8 +1,11 @@
 const extrasController = require("express").Router();
 
-const { createExtra, getAllExtras, addExtras } = require("../services/extrasService");
+const {
+  createExtra,
+  getAllExtras,
+  addExtras,
+} = require("../services/extrasService");
 const { getById } = require("../services/roomService");
-
 
 extrasController.get("/create", (req, res) => {
   //TODO
@@ -25,26 +28,28 @@ extrasController.post("/create", async (req, res) => {
   }
 });
 
-extrasController.get('/:roomId/addToRoom', async (req, res) => {
+extrasController.get("/:roomId/addToRoom", async (req, res) => {
+  const roomId = req.params.roomId;
+  const place = await getById(roomId);
+  const extras = await getAllExtras();
 
-        const roomId = req.params.roomId;
-        const place = await getById(roomId);
-        const extras = await getAllExtras();
+  extras.forEach((el) => {
+    if ((place.extras || []).some((x) => x.toString() === el._id.toString())) {
+      el.checked = true;
+    }
+  });
 
-        res.render('additions', {
-            title: 'Add Extra', 
-            place,
-            extras
-        });
+  res.render("additions", {
+    title: "Add Extra",
+    place,
+    extras,
+  });
 });
 
-extrasController.post('/:roomId/addToRoom', async (req, res) => {
+extrasController.post("/:roomId/addToRoom", async (req, res) => {
+  await addExtras(req.params.roomId, Object.keys(req.body));
 
-    await addExtras(req.params.roomId, Object.keys(req.body));
-
-    res.redirect('/extras/' + req.params.roomId + '/addToRoom');
-
-
+  res.redirect("/extras/" + req.params.roomId + "/addToRoom");
 });
 
 module.exports = extrasController;

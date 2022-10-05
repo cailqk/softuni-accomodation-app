@@ -5,7 +5,7 @@ return Room.find({}).lean();
 }
 
 function getById(id) {
-  return Room.findById(id).lean();
+  return Room.findById(id).populate('extras', 'label iconUrl').lean();
 }
 
 async function createPlace(placeData) {

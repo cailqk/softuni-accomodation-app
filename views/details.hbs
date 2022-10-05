@@ -3,13 +3,23 @@
 <h1>Details for: {{name}}</h1>
 <main class="main_details">
     <div>
-    <img class="card-img-top" style="width: 25rem" src="{{imgUrl}}">
+        <img class="card-img-top" style="width: 25rem" src="{{imgUrl}}">
     </div>
-    <p>{{description}}</p>
-    <p>Pricing: ${{price}}</p>
-    <div>
+    <div class="additions_image">
+        <p>{{description}}</p>
+        <p>Pricing: ${{price}}</p>
+        <div align="left">
+            <ul>
+                {{#each extras}}
+                <li>
+                    {{label}}
+                    <img class="icon" src="{{iconUrl}}">
+                </li>
+                {{/each}}
+            </ul>
+        </div>
         <a class="btn btn-primary" href="/extras/{{_id}}/addToRoom">Edit Extras</a>
     </div>
 </main>
-    <footer>Listed by: ADD HOST</footer>
+<footer>Listed by: ADD HOST</footer>
 {{/with}}

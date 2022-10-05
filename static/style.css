@@ -65,7 +65,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .additions_image {
-  text-align: right;
+  text-align: center;
+  list-style-type: none;
 }
 
 .icon {
@@ -75,5 +76,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .additions_ul {
   list-style-type: none;
+  text-align: left;
 }
 

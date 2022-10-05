@@ -7,7 +7,7 @@
     <form action="/extras/{{place._id}}/addToRoom" method="post">
     <ul class="additions_ul">
         {{#each extras}}
-        <li><input type="checkbox" name="{{_id}}">
+        <li><input type="checkbox" name="{{_id}}" {{#if checked}}checked{{/if}}>
             {{label}}
             <img class="icon" src="{{iconUrl}}">
         </li>
