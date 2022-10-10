@@ -1,3 +1,5 @@
+const routes = require("../config/routes");
+
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
@@ -12,6 +14,17 @@ router.get('/about', (req, res) => {
     })
 });
 
+router.get('/login', (req, res) => {
+    res.render('login', {
+        title: 'Login page'
+    })
+});
+
+router.get('/register', (req, res) => {
+    res.render('register', {
+        title: 'Login page'
+    })
+});
 
 
 module.exports = router;

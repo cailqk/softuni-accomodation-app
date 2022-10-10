@@ -49,7 +49,7 @@ extrasController.get("/:roomId/addToRoom", async (req, res) => {
 extrasController.post("/:roomId/addToRoom", async (req, res) => {
   await addExtras(req.params.roomId, Object.keys(req.body));
 
-  res.redirect("/extras/" + req.params.roomId + "/addToRoom");
+  res.redirect("/catalog/" + req.params.roomId);
 });
 
 module.exports = extrasController;

@@ -79,3 +79,6 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: left;
 }
 
+.nav-item-left {
+  text-align: left;
+}
