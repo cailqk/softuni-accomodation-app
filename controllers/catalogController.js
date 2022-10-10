@@ -3,6 +3,10 @@ const { getAll, getById } = require("../services/roomService");
 const router = require("express").Router();
 
 router.get("/", async (req, res) => {
+
+  const user = req.user;
+  console.log(user);
+
   const city = req.query.city || '';
   const name = req.query.name || '';
   const lowPrice = Number(req.query.lowPrice) || 1;
