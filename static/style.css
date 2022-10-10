@@ -79,6 +79,9 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: left;
 }
 
-.nav-item-left {
-  text-align: left;
+.error_message {
+  font-weight: bolder;
+  color: rgb(209, 40, 40);
 }
+
+
