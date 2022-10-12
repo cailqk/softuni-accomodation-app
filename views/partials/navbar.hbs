@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/"><i class="fa-solid fa-house"></i></a>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/catalog">Catalog</a>
+        <a class="nav-link" href="/catalog">Browse</a>
       </li>
       {{#if hasUser}}
       <li class="nav-item">
-        <a class="nav-link" href="/create">Add New</a>
+        <a class="nav-link" href="/create">Host</a>
       </li>
-      <li class="nav-item">
+      {{!-- <li class="nav-item">
         <a class="nav-link" href="extras/create">Add Extras</a>
-      </li>
+      </li> --}}
        <li class="nav-item">
         <a class="nav-link" href="/auth/logout">Logout</a>
       </li>

@@ -28,10 +28,14 @@ router.get("/:id", async (req, res) => {
   const placeId = req.params.id;
   const place = await getById(placeId);
 
+  if(req.user && req.user._id == place.owner) {
+      place.isOwner = true;
+  }
+
   if (place) {
     res.render("details", {
       title: "Accomodation Details",
-      place,
+      place
     });
   } else {
     res.render("placeNotFound", {

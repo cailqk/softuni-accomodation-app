@@ -49,6 +49,11 @@ authController.post("/register", async (req, res) => {
   }
 });
 
+authController.get("/logout", async (req, res) => {
+  res.clearCookie("jwt");
+  return res.redirect("/");
+});
+
 function attachToken(req, res, result) {
   const token = req.signJwt(result);
   res.cookie("jwt", token, { maxAge: 14400000 });

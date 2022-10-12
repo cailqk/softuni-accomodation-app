@@ -18,8 +18,10 @@
                 {{/each}}
             </ul>
         </div>
+        {{#if isOwner}}
         <a class="btn btn-primary" href="/extras/{{_id}}/addToRoom">Edit Extras</a>
+        {{/if}}
     </div>
 </main>
-<footer>Listed by: ADD HOST</footer>
+<footer>Hosted by: TODO - owner username</footer>
 {{/with}}
