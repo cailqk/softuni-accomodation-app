@@ -20,6 +20,8 @@
         </div>
         {{#if isOwner}}
         <a class="btn btn-primary" href="/extras/{{_id}}/addToRoom">Edit Extras</a>
+        <a class="btn btn-primary" href="/place/{{_id}}/edit">Edit Room</a>
+        <a class="btn btn-primary" id = 'del-btn' href="/place/{{_id}}/delete">Delete Room</a>
         {{/if}}
     </div>
 </main>

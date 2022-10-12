@@ -1,0 +1,41 @@
+<form action="/place/{{place._id}}/edit" method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name of the Place</label>
+    <input type="text" class="form-control" name="name" value={{place.name}}>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Location</label>
+    <input type="text" class="form-control" name="city" value={{place.city}}>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">People</label>
+    <select class="form-control" name="beds" value={{place.beds}}>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </div>
+  <label for="">Price</label>
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text">$</div>
+    </div>
+    <input type="number" class="form-control" name="price" value={{place.price}}>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" name="description" rows="3">{{place.description}}</textarea>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="customFile">Picture URL</label>
+    <input type="text" class="form-control" name="imgUrl" multiple value={{place.imgUrl}}/>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary">Save Changes</button>
+  </div>
+</form>

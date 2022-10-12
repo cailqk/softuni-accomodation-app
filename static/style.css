@@ -84,4 +84,10 @@ input[type=number]::-webkit-outer-spin-button {
   color: rgb(209, 40, 40);
 }
 
+#del-btn {
+  background-color: rgb(230, 20, 20);
+}
 
+#del-btn:hover {
+  background-color: darkred;
+}
