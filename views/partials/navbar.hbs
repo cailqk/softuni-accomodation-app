@@ -5,6 +5,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/catalog">Catalog</a>
       </li>
+      {{#if hasUser}}
       <li class="nav-item">
         <a class="nav-link" href="/create">Add New</a>
       </li>
@@ -12,14 +13,17 @@
         <a class="nav-link" href="extras/create">Add Extras</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="/about">About Us</a>
+        <a class="nav-link" href="/auth/logout">Logout</a>
       </li>
+      {{else}}
        <li class="nav-item">
         <a class="nav-link" href="/auth/login">Login</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="/auth/register">Register</a>
       </li>
+      {{/if}}
+      </div>
     </ul>
   </div>
 </nav>

@@ -2,7 +2,11 @@
     <h1>Welcome</h1>
     <div>
         <p><strong>Here, you can host or rent an accomodation easily.</strong></p>
+    {{#if hasUser}}
     <a href="/catalog" class="btn btn-primary">Explore</a>
     <a href="/create" class="btn btn-primary">Host</a>
+    {{else}}
+     <a href="/catalog" class="btn btn-primary">Explore</a>
+     {{/if}}
     </div>
 </div>
