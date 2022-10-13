@@ -31,8 +31,12 @@ extrasController.post("/create", async (req, res) => {
 extrasController.get("/:roomId/addToRoom", async (req, res) => {
   const roomId = req.params.roomId;
   const place = await getById(roomId);
+  
+  if(!req.user || place.owner != req.user._id) {
+    return res.redirect('/auth/login');
+  };
+  
   const extras = await getAllExtras();
-
   extras.forEach((el) => {
     if ((place.extras || []).some((x) => x.toString() === el._id.toString())) {
       el.checked = true;
@@ -47,7 +51,14 @@ extrasController.get("/:roomId/addToRoom", async (req, res) => {
 });
 
 extrasController.post("/:roomId/addToRoom", async (req, res) => {
-  await addExtras(req.params.roomId, Object.keys(req.body));
+  await addExtras(req.params.roomId, Object.keys(req.body)); 
+
+  const roomId = req.params.roomId;
+  const place = await getById(roomId);
+
+  if(!req.user || place.owner != req.user._id) {
+    return res.redirect('/auth/login');
+};
 
   res.redirect("/catalog/" + req.params.roomId);
 });

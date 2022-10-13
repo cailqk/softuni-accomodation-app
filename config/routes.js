@@ -14,6 +14,7 @@ module.exports = (app) => {
   app.use("/about", homeController);
   app.use("/extras", extrasController);
   app.use("/auth", authController);
-  app.use('/place', roomController)
+  app.use('/place', roomController);
+ 
   app.all("*", notFoundController);
 };

@@ -27,20 +27,25 @@ async function createPlace(placeData, ownerId) {
 async function updatePlace (placeId, placeData) {
   const place = await Room.findById(placeId);
 
-  place.name = placeData.name,
-    place.description = placeData.description,
-    place.city = placeData.city,
-    place.beds = Number(placeData.beds),
-    place.price = Number(placeData.price),
-    place.imgUrl = placeData.imgUrl
- 
+    place.name = placeData.name;
+    place.description = placeData.description;
+    place.city = placeData.city;
+    place.beds = Number(placeData.beds);
+    place.price = Number(placeData.price);
+    place.imgUrl = placeData.imgUrl;
+
     await place.save();
     return place;
 }
+
+async function deletePlace(placeId) {
+ return Room.findByIdAndRemove(placeId);
+};
 
 module.exports = {
   getAll,
   getById,
   createPlace,
-  updatePlace
+  updatePlace,
+  deletePlace
 };

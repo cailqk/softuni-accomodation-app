@@ -1,15 +1,15 @@
-<form action="/place/{{place._id}}/edit" method="post">
+<form action="/place/{{place._id}}/delete" method="post">
   <div class="form-group">
     <label for="exampleFormControlInput1">Name of the Place</label>
-    <input type="text" class="form-control" name="name" value="{{place.name}}">
+    <input type="text" class="form-control" name="name" value="{{place.name}}" disabled>
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Location</label>
-    <input type="text" class="form-control" name="city" value="{{place.city}}">
+    <input type="text" class="form-control" name="city" value="{{place.city}}" disabled>
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect2">People</label>
-    <select class="form-control" name="beds" value="{{place.beds}}">
+    <select class="form-control" name="beds" value="{{place.beds}}" disabled>
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -25,17 +25,17 @@
     <div class="input-group-prepend">
       <div class="input-group-text">$</div>
     </div>
-    <input type="number" class="form-control" name="price" value="{{place.price}}">
+    <input type="number" class="form-control" name="price" value="{{place.price}}" disabled>
   </div>
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea class="form-control" name="description" rows="3">{{place.description}}</textarea>
+    <textarea class="form-control" name="description" rows="3" disabled>{{place.description}}</textarea>
   </div>
   <div class="form-group">
     <label class="form-label" for="customFile">Picture URL</label>
-    <input type="text" class="form-control" name="imgUrl" value="{{place.imgUrl}}"/>
+    <input type="text" class="form-control" name="imgUrl" value="{{place.imgUrl}}" disabled/>
   </div>
   <div class="form-group">
-    <button class="btn btn-primary">Save Changes</button>
+    <button class="btn btn-primary">Confirm Deletion</button>
   </div>
 </form>
