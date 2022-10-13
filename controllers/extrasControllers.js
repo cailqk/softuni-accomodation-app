@@ -1,5 +1,6 @@
 const extrasController = require("express").Router();
 
+const { hasRole } = require("../middlewares/guards");
 const {
   createExtra,
   getAllExtras,
@@ -7,15 +8,13 @@ const {
 } = require("../services/extrasService");
 const { getById } = require("../services/roomService");
 
-extrasController.get("/create", (req, res) => {
-  //TODO
-  //show form for adding extras
+extrasController.get("/create", hasRole('admin'), (req, res) => {
   res.render("createExtra", {
     title: "Create New Extra",
   });
 });
 
-extrasController.post("/create", async (req, res) => {
+extrasController.post("/create", hasRole('admin'), async (req, res) => {
   try {
     await createExtra(req.body.label, req.body.iconUrl);
     res.redirect("/catalog");

@@ -7,9 +7,7 @@ const roleSchema = new Schema({
 const userSchema = new Schema({
   username: { type: String, minlenght: 4 },
   hashedPassword: { type: String, required: true },
-
-  //try and fix the roles to be saved the right way
-  roles: { type: [roleSchema], default: ["user"] },
+  roles: { type: [{type: String, enum: ["user", "admin"]}], default: ["user"] },
 });
 
 userSchema.index(
